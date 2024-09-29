@@ -6,7 +6,7 @@ class CategoryTripsScreen extends StatefulWidget {
   static const screenRoute = '/category-trips';
 
   final List<Trip> availableTrips;
-  CategoryTripsScreen(this.availableTrips);
+  const CategoryTripsScreen(this.availableTrips, {super.key});
 
   @override
   State<CategoryTripsScreen> createState() => _CategoryTripsScreenState();

@@ -10,7 +10,7 @@ class TripItem extends StatelessWidget {
   final Season season;
   final TripType tripType;
 
-  TripItem({
+  const TripItem({
     required this.id,
     required this.title,
     required this.imageUrl,
@@ -65,13 +65,13 @@ class TripItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         elevation: 7,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: [
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
@@ -86,7 +86,7 @@ class TripItem extends StatelessWidget {
                 Positioned.fill(
                   child: Container(
                     alignment: Alignment.bottomRight,
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
                     ),
@@ -98,7 +98,7 @@ class TripItem extends StatelessWidget {
                           Colors.black.withOpacity(0),
                           Colors.black.withOpacity(0.8),
                         ],
-                        stops: [0.6, 1],
+                        stops: const [0.6, 1],
                       ),
                     ),
                     child: Text(
@@ -119,31 +119,31 @@ class TripItem extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.today,
                         color: Colors.amber,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text('$duration أيام '),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.wb_sunny,
                         color: Colors.amber,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(seasonText),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.family_restroom,
                         color: Colors.amber,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(tripTypeText),
                     ],
                   ),

@@ -12,10 +12,10 @@ class AppDrawer extends StatelessWidget {
           Container(
             height: 100,
             width: double.infinity,
-            padding: EdgeInsets.only(top: 40),
+            padding: const EdgeInsets.only(top: 40),
             alignment: Alignment.center,
             color: Colors.deepPurple,
-            child: Text(
+            child: const Text(
               'الرحلات ',
               style: TextStyle(
                 color: Colors.white,
@@ -24,7 +24,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           newMethod('الرحلات', Icons.card_travel, () {
             Navigator.of(context).pushReplacementNamed('/');
           }),
@@ -46,7 +46,7 @@ class AppDrawer extends StatelessWidget {
       ),
       title: Text(
         title, // Use the title passed as a parameter
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),

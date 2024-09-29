@@ -26,7 +26,7 @@ flutter:
   #   - image/
 
   fonts:
-    - family: Cairo # Fixed indentation and spelling
+    - family: Cairo
       fonts:
         - asset: assets/font/Cairo-Black.ttf
           weight: 600

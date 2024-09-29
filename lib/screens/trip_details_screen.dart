@@ -8,12 +8,12 @@ class TripDetailsScreen extends StatelessWidget {
   static const screenRoute = '/trip_detail';
 
   final Function manageFavorite;
-  final Function isFovarite;
+  final Function isFavorite;
 
-  TripDetailsScreen(this.manageFavorite, this.isFovarite);
+  const TripDetailsScreen(this.manageFavorite, this.isFavorite, {super.key});
   Widget buildScreenTitle(String titleText) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       alignment: Alignment.topRight,
       child: Text(
         'أنشطة', // Fixed the Arabic text as well
@@ -33,8 +33,8 @@ class TripDetailsScreen extends StatelessWidget {
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.all(10),
       height: 200,
       child: child,
     );
@@ -51,7 +51,7 @@ class TripDetailsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 300,
               width: double.infinity,
               child: Image.network(
@@ -63,17 +63,17 @@ class TripDetailsScreen extends StatelessWidget {
             buildScreenTitle('أنشطة'),
             buildListViewContainer(
               ListView.builder(
-                itemCount: selectedTrip.activties.length,
+                itemCount: selectedTrip.activities.length,
                 itemBuilder: (ctx, index) => Card(
                   child: Padding(
                     padding:
                         const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    child: Text(selectedTrip.activties[index]),
+                    child: Text(selectedTrip.activities[index]),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             buildScreenTitle('البرنامج اليومي'),
             buildListViewContainer(
               ListView.builder(
@@ -82,21 +82,24 @@ class TripDetailsScreen extends StatelessWidget {
                   children: [
                     ListTile(
                       leading: CircleAvatar(
-                        child: Text('يوم ${index + 1}'),
+                        child: Text(
+                          'يوم ${index + 1}',
+                          style: const TextStyle(fontSize: 14),
+                        ),
                       ),
                       title: Text(selectedTrip.program[index]),
                     ),
-                    Divider(),
+                    const Divider(),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(isFovarite(tripId) ? Icons.star : Icons.star_border),
+        child: Icon(isFavorite(tripId) ? Icons.star : Icons.star_border),
         onPressed: () => manageFavorite(tripId),
       ),
     );

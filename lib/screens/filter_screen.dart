@@ -6,8 +6,7 @@ class FilterScreen extends StatefulWidget {
   final Function saveFilters;
   final Map<String, bool> currentFilters;
 
-  FilterScreen(this.currentFilters, this.saveFilters, {Key? key})
-      : super(key: key);
+  const FilterScreen(this.currentFilters, this.saveFilters, {super.key});
 
   @override
   State<FilterScreen> createState() => _FilterScreenState();
@@ -21,8 +20,8 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   initState() {
     _isInSummer = widget.currentFilters['summer'] ?? false;
-    _isInWinter = widget.currentFilters['Winter'] ?? false;
-    _isForFamily = widget.currentFilters['Family'] ?? false;
+    _isInWinter = widget.currentFilters['winter'] ?? false;
+    _isForFamily = widget.currentFilters['family'] ?? false;
     super.initState();
   }
 
@@ -46,9 +45,9 @@ class _FilterScreenState extends State<FilterScreen> {
               icon: const Icon(Icons.save),
               onPressed: () {
                 final selectedFilters = {
-                  'summer ': _isInSummer,
-                  'winter ': _isInWinter,
-                  'family ': _isForFamily,
+                  'summer': _isInSummer,
+                  'winter': _isInWinter,
+                  'family': _isForFamily,
                 };
                 widget.saveFilters(selectedFilters);
               }),

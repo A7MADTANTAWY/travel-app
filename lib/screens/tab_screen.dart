@@ -45,7 +45,7 @@ import './favorites_screen.dart';
 
 class TabScreen extends StatefulWidget {
   final List<Trip> favoriteTrips;
-  TabScreen(this.favoriteTrips, {Key? key}) : super(key: key);
+  const TabScreen(this.favoriteTrips, {super.key});
 
   @override
   State<TabScreen> createState() => _TabScreenState();
@@ -60,7 +60,7 @@ class _TabScreenState extends State<TabScreen> {
   void initState() {
     _screens = [
       {
-        'Screen': CategoriesScreen(),
+        'Screen': const CategoriesScreen(),
         'Title': 'تصنيفات الرحلات',
       },
       {

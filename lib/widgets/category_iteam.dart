@@ -6,7 +6,7 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final String imageUrl;
 
-  CategoryItem(this.id, this.title, this.imageUrl);
+  const CategoryItem(this.id, this.title, this.imageUrl, {super.key});
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryTripsScreen.screenRoute, arguments: {
@@ -34,7 +34,7 @@ class CategoryItem extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.35),
@@ -42,9 +42,9 @@ class CategoryItem extends StatelessWidget {
             ),
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 25,
               ),
               softWrap: true,
               overflow: TextOverflow.fade,

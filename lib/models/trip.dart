@@ -17,26 +17,26 @@ class Trip {
   final List<String> categories;
   final String title;
   final String imageUrl;
-  final List<String> activties;
+  final List<String> activities;
   final List<String> program;
   final int duration;
   final Season season;
   final TripType tripType;
   final bool isInWinter;
-  final bool isInSummar;
+  final bool isInSummer;
   final bool isForFamilies;
 
   const Trip(
       {required this.id,
       required this.categories,
       required this.imageUrl,
-      required this.activties,
+      required this.activities,
       required this.program,
       required this.duration,
       required this.season,
       required this.tripType,
       required this.isInWinter,
-      required this.isInSummar,
+      required this.isInSummer,
       required this.title,
       required this.isForFamilies});
 }

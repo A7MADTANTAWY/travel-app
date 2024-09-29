@@ -6,12 +6,12 @@ class FavoritesScreen extends StatelessWidget {
   // const FavoritesScreen({super.key});
   final List<Trip> favoriteTrips;
 
-  FavoritesScreen(this.favoriteTrips);
+  const FavoritesScreen(this.favoriteTrips, {super.key});
 
   @override
   Widget build(BuildContext context) {
     if (favoriteTrips.isEmpty) {
-      return Center(
+      return const Center(
         child: Text('ليس لديك اي رحله في قائمة المفضله '),
       );
     } else {
